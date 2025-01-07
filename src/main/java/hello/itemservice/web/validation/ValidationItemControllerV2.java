@@ -49,7 +49,7 @@ public class ValidationItemControllerV2 {
     @PostMapping("/add")
     public String addItemV1(@ModelAttribute Item item, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 
-        //검증 로직
+        //검증 로직(개발자가 만든 비즈니스 로직에 대한 검증 오류)
         if (!StringUtils.hasText(item.getItemName())) {
             bindingResult.addError(new FieldError("item", "itemName", "상품 이름은 필수 입니다."));
         }
