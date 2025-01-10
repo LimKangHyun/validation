@@ -150,6 +150,12 @@ public class ValidationItemControllerV2 {
     @PostMapping("/add")
     public String addItemV4(@ModelAttribute Item item, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 
+//        아래 코드 네줄은 스프링이 제공하는 에러메시지 사용 코드
+//        if (bindingResult.hasErrors()) {
+//            log.info("errors={} ", bindingResult);
+//            return "validation/v2/addForm";
+//        }
+
         log.info("objectName={}", bindingResult.getObjectName());
         log.info("target={}", bindingResult.getTarget());
 
